@@ -231,7 +231,21 @@ Here we compiled a list of FAQs.
         ```bash
         #!<output> bash
         ```
-
+- Autograder times out 
+    - Most likely, this is due to sub-optimal implementation of __combine.sh__.
+      - Our solution do it in one pass
+      - The corpus is large, so avoid using subshell to assign every variable in the loop, especially when subshell contains pipes. 
+- Cannot find module __xxxxx__
+    - Try running `npm install` under __c__ folder.
+- Student tests not found on Autograder
+    - Name your test files with __s\_test__ prefix
+      - If the file is testing __combine.sh__, for example, it should be named __s\_test\_combine.sh__.
+      - Make sure the files are tracked (i.e., added via `git add`)
+- Sort order for global index
+    - Sort terms alphabetically
+    - For sorting urls/counts do a 2-way sort
+      - Sort by count in decreasing order
+      - Sort urls alphabetically to break ties
 ## Feedback 
 
 Please let us know if you find any mistakes, inconsistencies, or confusing language in this or any other CS1380 document by filling out the [anonymous feedback form](https://docs.google.com/forms/d/e/1FAIpQLSe-nkb-NFOZaqqfg0CVZYvBDOhtqOitRxS4DBCnfoyVFkFfJw/viewform).
