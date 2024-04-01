@@ -80,9 +80,9 @@ To set up and use Docker, follow the instructions from [the Docker website](http
 docker pull ghcr.io/brown-cs1380/container:main
 ```
 If you're not planning on using Docker—likely because you are already running a Unix or Unix-based environment such as Linux, OS X, or WSL with appropriate dependencies installed—simply clone the M0 repository from GitHub:
-
+```shell
 git clone https\://github.com/brown-cs1380/m0
-
+```
 Future milestones will be using the corresponding images and repositories without naming them explicitly — simply replace m0 with m1, m2, etc.
 
 
@@ -122,21 +122,13 @@ Note that the engine cannot be executed as-is: some of its processing units have
 Here's a quick checklist of files that you need to modify.
 
 - getURLs.js: identify and extract URLs
-
 - getText.sh: convert an incoming HTML stream to text
-
 - process.sh: harmonize text (e.g., convert to lowercase, remove stopwords)
-
 - stem.js: replace individual words with their root (stem)
-
 - combine.sh: generate additional bigrams and trigrams from word sequences
-
 - invert.sh: create a mapping from terms to IDs (URLs) of documents that contain them
-
 - merge.js: merge the inverted index of the current page with the global inverted index
-
 - query.sh: identify relevant pages using 1–3 search terms
-
 
 ## Testing and Production Environments
 
