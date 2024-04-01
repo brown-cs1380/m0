@@ -6,15 +6,14 @@ colorlinks: true
 
 > Collaboration: Individual milestone
 >
-> Completion: About 6–8 hours (but might take longer if content is unfamiliar/new.)
+> Completion: About 10-12 hours (but might take longer if content is unfamiliar/new.)
 >
 > Deadline: Monday, Feb. 5, 2024 (11:59PM ET)
 >
 > Latest handout version: [CS1380:2024:M0](https://docs.google.com/document/d/1kRI-5yP_x2hweOsijDIn2Q1E1acMz3vVTX0LjZVgZbA/edit#heading=h.nsafc3gmp2br)
 >
 > GitHub repo: <https://github.com/brown-cs1380/m0>
-> 
-> Solution archive: [M0]() (available on Feb. 6th, only to Brown students and affiliates)
+
 
 ## Table of Contents
 
@@ -93,25 +92,24 @@ The core engine can be written as a single loop, which
 1. Reads a URL from a set of URLs
 2. Downloads the URL, extracting further URLs and additional content
 3. Analyzes the content, to compute inverted indices and add them to the global index.
-
 ```bash
 while read -r url; do
 
-  if \[\[ "$url" == "stop" ]]; then
+  if [[ "$url" == "stop" ]]; then
+    # stop the engine if it sees the string "stop" 
+    break;
+  fi
 
-    # stop the engine if it sees the string "stop"
+  ./crawl.sh "$url" >d/content.txt
+  ./index.sh d/content.txt "$url"
 
-    break;
-
-  fi
-
-  ./crawl.sh "$url" >d/content.txt
-
-  ./index.sh d/content.txt "$url"
+  if  [[ "$(cat d/visited.txt | wc -l)" -ge "$(cat d/urls.txt | wc -l)" ]]; then
+      # stop the engine if it has seen all available URLs
+      break;
+  fi
 
 done < <(tail -f d/urls.txt)
 ```
-
 The __crawl.sh__ and __index.sh__ scripts run components in the __c/__ (for _code_) directory — for example, __getURLs.js__ and __invert.sh__: __crawl.sh__ downloads pages and __index.sh__ gradually builds the inverted index. All these scripts read from and write to various data files in the __d/__ (for _data_) directory. Various tests showing the structure of intermediate data streams exist in the __t/__ directory — feel free to add more tests to check your implementation's correctness. An additional __query.sh__ script can be used (when implemented) to query the inverted index and return relevant pages. The figure below shows an overview of the system; components in red are not implemented (and are the focus of this milestone).
 
 ![](./asset/CS1380_2024_M0_1.jpg)
