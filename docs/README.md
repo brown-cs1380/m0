@@ -112,7 +112,7 @@ done < <(tail -f d/urls.txt)
 ```
 The __crawl.sh__ and __index.sh__ scripts run components in the __c/__ (for _code_) directory — for example, __getURLs.js__ and __invert.sh__: __crawl.sh__ downloads pages and __index.sh__ gradually builds the inverted index. All these scripts read from and write to various data files in the __d/__ (for _data_) directory. Various tests showing the structure of intermediate data streams exist in the __t/__ directory — feel free to add more tests to check your implementation's correctness. An additional __query.sh__ script can be used (when implemented) to query the inverted index and return relevant pages. The figure below shows an overview of the system; components in red are not implemented (and are the focus of this milestone).
 
-![](./asset/CS1380_2024_M0_1.jpg)
+![](./CS1380_2024_M0_1.jpg)
 
 The entire system applies some basic natural-language processing primitives to extract and store terms, bigrams, and trigrams from these pages — along with pointers to these pages. Most components operate in a streaming fashion—the engine does not stop until it completes—with different elements (web pages) being processed by different processing units: one element might be getting downloaded while another element might be going through link extraction while yet another element might be getting indexed — and the user can still use the tool to extract results from the indices.
 
