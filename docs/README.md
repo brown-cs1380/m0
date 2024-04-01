@@ -26,6 +26,7 @@ colorlinks: true
 - [Reflections](#reflections)
 - [Tips & Submission](#tips-and-submission)
 - [FAQ](#faq)
+- [Feedback](#feedback)
 
 ## Introduction 
 This milestone combines several goals: 
@@ -238,6 +239,7 @@ Here we compiled a list of FAQs.
     - For sorting urls/counts do a 2-way sort
       - Sort by count in decreasing order
       - Sort urls alphabetically to break ties
+
 ## Feedback 
 
 Please let us know if you find any mistakes, inconsistencies, or confusing language in this or any other CS1380 document by filling out the [anonymous feedback form](https://docs.google.com/forms/d/e/1FAIpQLSe-nkb-NFOZaqqfg0CVZYvBDOhtqOitRxS4DBCnfoyVFkFfJw/viewform).
