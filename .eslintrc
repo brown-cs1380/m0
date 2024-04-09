@@ -2,12 +2,16 @@
     "extends": "google",
     "env": {
         "es6": true, // Enable ES6 syntax including new ES6 globals
-        "node": true // Adjust based on your environment
+        "node": false // Adjust based on your environment
     },
+    "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": 2018, // Update ECMAScript version to at least 6 or later for arrow functions
-        "sourceType": "script" // Set to "module" if you are using ES6 modules
+        "sourceType": "module" // Set to "module" if you are using ES6 modules
     },
+    "plugins": [
+        "@typescript-eslint"
+    ],
     "rules": {
         "no-var": "off", // Allow 'var' for ES5 compatibility
         "prefer-const": "off", // Do not enforce const over let

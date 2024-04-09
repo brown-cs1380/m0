@@ -3,16 +3,16 @@
 // merge two files---the incoming 1-page index and the global index (on disk)
 // the details of the global index can be seen in the test cases.
 
-const fs = require('fs');
-const { exit } = require('process');
-const readline = require('readline');
+import _fs from 'node:fs';
+import {exit as _exit, stdin as input} from 'node:process';
+import readline from 'node:readline';
 
 const rl = readline.createInterface({
-  input: process.stdin,
+  input,
 });
 
 // TODO some code here
-rl.on('line', (line) => {
+rl.on('line', (_line: string) => {
   // TODO some code here
 });
 
@@ -22,5 +22,4 @@ rl.on('close', () => {
 
 const mergeIndices = () => {
   // TODO some code here
-}
-
+};

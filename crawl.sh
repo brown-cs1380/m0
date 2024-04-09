@@ -3,5 +3,5 @@
 echo "$1" >>d/visited.txt
 
 curl -sL "$1" |
-  tee >(c/getURLs.js "$1" | grep -vxf d/visited.txt >>d/urls.txt) |
-  c/getText.js
+  tee >(deno run c/getURLs.ts "$1" | grep -vxf d/visited.txt >>d/urls.txt) |
+  deno run c/getText.ts

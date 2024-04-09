@@ -3,8 +3,8 @@
 
 cat "$1" |
   c/process.sh |
-  c/stem.js |
+  deno run stem.ts |
   c/combine.sh |
   c/invert.sh "$2" |
-  c/merge.js d/global-index.txt |
+  deno run c/merge.ts d/global-index.txt |
   sort -o d/global-index.txt
