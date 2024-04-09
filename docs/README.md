@@ -1,17 +1,9 @@
----
-colorlinks: true
----
-
 # M0: Setup & Centralized Computing
 
 > Collaboration: Individual milestone
->
 > Completion: About 10-12 hours (but might take longer if content is unfamiliar/new.)
->
 > Deadline: Monday, Feb. 5, 2024 (11:59PM ET)
->
 > Latest handout version: [CS1380:2024:M0](https://docs.google.com/document/d/1kRI-5yP_x2hweOsijDIn2Q1E1acMz3vVTX0LjZVgZbA/edit#heading=h.nsafc3gmp2br)
->
 > GitHub repo: <https://github.com/brown-cs1380/m0>
 
 
