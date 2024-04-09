@@ -1,0 +1,15 @@
+{
+    "imports": {
+        "html-to-text": "npm:html-to-text@9.0.5",
+        "jsdom": "npm:jsdom@24.0.0",
+        "url": "npm:url@0.11.3",
+        "natural": "npm:natural@7.0.0"
+    },
+    "lint": {
+        "include": ["c/"],
+        "exclude": ["c/*.sh"]
+    },
+    "tasks": {
+        "lint": "eslint c/**"
+    }
+}
