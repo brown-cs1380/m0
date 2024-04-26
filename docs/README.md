@@ -199,6 +199,8 @@ Here are some guidelines that might be helpful:
 
 To create a submission, run [s/submit.sh](../s/submit.sh) from the root folder of M0. This will create a `submission.zip` file which you will then upload to [Gradescope](https://www.gradescope.com/) (select "managed submission" and then upload your zip manually). The zip archive will contain a `javascript/src/main` folder inside which all the files tracked by git and found to be modified. Make sure to `git commit` any new files you have created before running the submit script; the [s/submit.sh](../s/submit.sh) script will **not** include any untracked files in the submission.
 
+if on macOS and fail to run s/submit.sh, try replacing `#!/bin/env` with `#!/usr/bin/env` in submit.sh.
+
 You are allowed to submit as many times as you want up until the deadline; so _submit early and often_. For full grade, before submitting the final version of your code make sure that 
 1. All linters run without any errors
 2. The provided tests run without any errors
@@ -231,6 +233,10 @@ Here we compiled a list of FAQs.
     - For sorting urls/counts do a 2-way sort
       - Sort by count in decreasing order
       - Sort urls alphabetically to break ties
+     
+- fail lint.test
+  - try `mv t/gi-diff.js c/` and `npm run lint --fix`.
+  - if on vscode, install prettier extension, and configure based on it's requirements.
 
 ## Feedback 
 
